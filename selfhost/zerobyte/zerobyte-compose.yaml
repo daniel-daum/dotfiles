@@ -1,0 +1,14 @@
+services:
+  zerobyte:
+    image: ghcr.io/nicotsx/zerobyte:latest
+    container_name: zerobyte
+    restart: unless-stopped
+    ports:
+      - "4096:4096"
+    environment:
+      - "TZ:America/Los_Angeles"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /var/lib/zerobyte:/var/lib/zerobyte
+      - /var/lib/docker/volumes:/docker-volumes:ro
+      - /mnt/holonet/zerobyte:/data

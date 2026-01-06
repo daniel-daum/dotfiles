@@ -1,0 +1,38 @@
+services:
+  arcane:
+    image: ghcr.io/getarcaneapp/arcane:latest
+    container_name: arcane
+    restart: unless-stopped
+    extra_hosts:
+      - "${ARCANE_AGENT_HOST:?missing}:${ARCANE_AGENT_IP:?missing}"
+    env_file:
+      - .env
+    environment:
+      - PUID=${ARCANE_UID:?missing}
+      - PGID=${ARCANE_GID:?missing}
+
+      - ENCRYPTION_KEY=${ARCANE_ENCRYPTION_KEY:?missing}
+      - JWT_SECRET=${ARCANE_JWT_SECRET:?missing}
+
+      - APP_URL=${ARCANE_APP_URL:?missing}
+      - LOG_LEVEL=${ARCANE_LOG_LEVEL:?missing}
+      - LOG_JSON=${ARCANE_LOG_JSON:?missing}
+      - OIDC_ENABLED=${ARCANE_OIDC_ENABLED:?missing}
+
+      - POSTGRES_DB=${ARCANE_POSTGRES_DB:?missing}
+      - POSTGRES_USER=${ARCANE_POSTGRES_USER:?missing}
+      - DATABASE_URL=${ARCANE_DATABASE_URL:?missing}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - arcane-data:/app/data
+    networks:
+      - holonet
+    ports:
+      - 3552:3552 # web ui
+volumes:
+  arcane-data:
+    driver: local
+
+networks:
+  holonet:
+    external: true

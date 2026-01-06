@@ -1,0 +1,41 @@
+services:
+    gitea:
+        image: gitea/gitea:latest
+        container_name: gitea
+        restart: unless-stopped
+        env_file:
+            - .env
+        environment:
+
+            - USER_UID=${GITEA_UID:?missing}
+            - USER_GID=${GITEA_GID:?missing}
+
+            - GITEA__server__DOMAIN=${GITEA_DOMAIN:?missing}
+            - GITEA__server__ROOT_URL=${GITEA_ROOT_URL:?missing}
+
+
+            - GITEA__database__DB_TYPE=postgres
+            - GITEA__database__HOST=${GITEA_DB_HOST:?missing}
+            - GITEA__database__NAME=${GITEA_DB_NAME:?missing}
+            - GITEA__database__USER=${GITEA_DB_USER:?missing}
+            - GITEA__database__PASSWD=${GITEA_DB_PASS:?missing}
+
+            - GITEA__server__SSH_DOMAIN=${GITEA_SSH_DOMAIN:?missing}
+            - GITEA__server__SSH_PORT=${GITEA_SSH_PORT:?missing}
+
+        volumes:
+            - gitea-data:/data
+        networks:
+            - holonet
+        ports:
+            - "127.0.0.1:3000:3000" # web UI
+            - "127.0.0.1:2222:22" # container SSH reachable locally on host:2222
+
+volumes:
+    gitea-data:
+        driver: local
+        name: gitea-data
+
+networks:
+    holonet:
+        external: true

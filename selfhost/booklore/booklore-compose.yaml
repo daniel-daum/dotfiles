@@ -1,0 +1,63 @@
+services:
+  booklore:
+    image: booklore/booklore:latest
+    container_name: booklore
+    environment:
+      - "TZ:America/Los_Angeles"
+
+      - USER_ID=${BOOKLORE_APP_USER_ID:?missing}
+      - GROUP_ID=${BOOKLORE_APP_GROUP_ID:?missing}
+
+      - DATABASE_URL=${BOOKLORE_DATABASE_URL:?missing}
+      - DATABASE_USERNAME=${BOOKLORE_DB_USER:?missing}
+      - DATABASE_PASSWORD=${BOOKLORE_DB_PASSWORD:?missing}
+
+      - BOOKLORE_PORT=${BOOKLORE_PORT:?missing}
+    depends_on:
+      mariadb:
+        condition: service_healthy
+    ports:
+      - "${BOOKLORE_PORT}:${BOOKLORE_PORT}"
+    volumes:
+      - booklore-data:/app/data
+      - booklore-books:/books
+      - booklore-bookdrop:/bookdrop
+    healthcheck:
+      test: wget -q -O - http://localhost:${BOOKLORE_PORT}/api/v1/healthcheck
+      interval: 60s
+      retries: 5
+      start_period: 60s
+      timeout: 10s
+    restart: unless-stopped
+    env_file:
+      - .env
+
+  mariadb:
+    image: lscr.io/linuxserver/mariadb:11.4.5
+    container_name: mariadb
+    environment:
+      - "TZ:America/Los_Angeles"
+
+      - PUID=${BOOKLORE_DB_USER_ID:?missing}
+      - PGID=${BOOKLORE_DB_GROUP_ID:?missing}
+
+      - MYSQL_ROOT_PASSWORD=${BOOKLORE_MYSQL_ROOT_PASSWORD:?missing}
+      - MYSQL_DATABASE=${BOOKLORE_MYSQL_DATABASE:?missing}
+      - MYSQL_USER=${BOOKLORE_DB_USER:?missing}
+      - MYSQL_PASSWORD=${BOOKLORE_DB_PASSWORD:?missing}
+    volumes:
+      - booklore-mariadb-config:/config
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "mariadb-admin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    env_file:
+      - .env
+
+volumes:
+  booklore-data:
+  booklore-books:
+  booklore-bookdrop:
+  booklore-mariadb-config:
