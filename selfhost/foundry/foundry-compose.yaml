@@ -1,0 +1,40 @@
+services:
+  foundry:
+    image: felddy/foundryvtt:release
+    hostname: foundryvtt
+    restart: unless-stopped
+    env_file:
+      - .env
+
+    volumes:
+      - type: bind
+        source: ./data
+        target: /data
+
+    environment:
+      - FOUNDRY_USERNAME=${FOUNDRY_USERNAME}
+      - FOUNDRY_PASSWORD=${FOUNDRY_PASSWORD}
+      - FOUNDRY_ADMIN_KEY=${FOUNDRY_ADMIN_KEY}
+      - FOUNDRY_LICENSE_KEY=${FOUNDRY_LICENSE_KEY}
+
+      # Essential production settings
+      - FOUNDRY_HOSTNAME=${FOUNDRY_HOSTNAME:?missing}
+      - FOUNDRY_PROXY_SSL=${FOUNDRY_PROXY_SSL:?missing}
+      - FOUNDRY_PROXY_PORT=${FOUNDRY_PROXY_PORT:?missing}
+      - FOUNDRY_PROTOCOL=${FOUNDRY_PROTOCOL:?missing}
+
+      # Performance optimizations
+      - FOUNDRY_COMPRESS_WEBSOCKET=${FOUNDRY_COMPRESS_WEBSOCKET:?missing}
+      - FOUNDRY_MINIFY_STATIC_FILES=${FOUNDRY_MINIFY_STATIC_FILES:?missing}
+      - CONTAINER_CACHE=${CONTAINER_CACHE:?missing}
+      - CONTAINER_CACHE_SIZE=${CONTAINER_CACHE_SIZE:?missing}
+
+      # Persistence / telemetry
+      - CONTAINER_PRESERVE_CONFIG=${CONTAINER_PRESERVE_CONFIG:?missing}
+      - FOUNDRY_TELEMETRY=${FOUNDRY_TELEMETRY:?missing}
+
+      # Stable version pin
+      - FOUNDRY_VERSION=${FOUNDRY_VERSION:?missing}
+
+    ports:
+      - "30000:30000/tcp"
