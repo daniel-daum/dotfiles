@@ -1,0 +1,19 @@
+services:
+  pocket-id:
+    image: ghcr.io/pocket-id/pocket-id:v2
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - 1411:1411
+    volumes:
+      - pocket-id-data:/app/data
+
+volumes:
+  pocket-id-data:
+    name: pocket-id-data
+    driver: local
+
+networks:
+  holonet:
+    external: true
