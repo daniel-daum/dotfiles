@@ -1,0 +1,63 @@
+{
+  "check_status": true,
+
+  "commit_type": {
+    "enable": true,
+    "initial_value": "feat",
+    "infer_type_from_branch": true,
+    "append_emoji_to_label": false,
+    "append_emoji_to_commit": false,
+    "options": [
+      { "value": "feat", "label": "feat", "hint": "Adds user-facing behavior" },
+      { "value": "fix", "label": "fix", "hint": "Fixes incorrect behavior" },
+      { "value": "refactor", "label": "refactor", "hint": "Internal restructure, no behavior change" },
+      { "value": "docs", "label": "docs", "hint": "Documentation only" },
+      { "value": "chore", "label": "chore", "hint": "Tooling, deps, config, maintenance" }
+    ]
+  },
+
+  "commit_scope": {
+    "enable": true,
+    "custom_scope": false,
+    "initial_value": "core",
+    "options": [
+      { "value": "core", "label": "core", "hint": "Core logic / domain code" },
+      { "value": "ui", "label": "ui", "hint": "User interface / frontend" },
+      { "value": "api", "label": "api", "hint": "HTTP / public interfaces" },
+      { "value": "data", "label": "data", "hint": "Database, models, migrations" },
+      { "value": "auth", "label": "auth", "hint": "Authentication / authorization" },
+      { "value": "infra", "label": "infra", "hint": "Build, CI, deployment, environment" },
+      { "value": "deps", "label": "deps", "hint": "Dependency updates only" }
+    ]
+  },
+
+  "check_ticket": {
+    "infer_ticket": false,
+    "confirm_ticket": false,
+    "add_to_title": false,
+    "append_hashtag": false,
+    "title_position": "start"
+  },
+
+  "commit_title": {
+    "max_size": 72
+  },
+
+  "commit_body": {
+    "enable": false,
+    "required": false
+  },
+
+  "commit_footer": {
+    "enable": false,
+    "initial_value": [],
+    "options": []
+  },
+
+  "breaking_change": {
+    "add_exclamation_to_title": true
+  },
+
+  "confirm_commit": true,
+  "print_commit_output": true
+}

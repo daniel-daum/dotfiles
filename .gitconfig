@@ -1,0 +1,29 @@
+[user]
+	name = daniel daum
+	email = daniel@danieldaum.net
+	signingkey = 2811D7C028D6F3393A21DDF51C248810516E97FF
+[push]
+	autoSetupRemote = true
+[commit]
+	gpgsign = true
+[tag]
+	gpgSign = true
+[alias]
+	# status
+	st = status --short --branch
+
+	# add
+	a  = add
+	ap = add --patch
+
+	# commit
+	c  = commit
+	cm = commit --message
+
+	# sync
+	pl = pull --rebase
+	ps = push
+	fp = fetch --prune
+
+	# cleanup
+	sweep = "!git branch --merged | grep -v '\\*\\|main\\|master' | xargs -n 1 git branch -d"
