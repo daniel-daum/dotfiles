@@ -8,3 +8,10 @@ antidote load
 
 # eza ls replacement (long, all files, human-readable, icons, git info)
 alias ll="eza -al --group-directories-first --icons --git --color=auto --long --header --classify"
+
+# java (hopefully not here for long)
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+
+# rust
+. "$HOME/.cargo/env"
