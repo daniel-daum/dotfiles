@@ -1,3 +1,6 @@
+# mise
+eval "$(mise activate zsh)"
+
 # ssh auth
 export SSH_AUTH_SOCK=/Users/daniel/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh
 
@@ -9,9 +12,5 @@ antidote load
 # eza ls replacement (long, all files, human-readable, icons, git info)
 alias ll="eza -al --group-directories-first --icons --git --color=auto --long --header --classify"
 
-# java (hopefully not here for long)
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
-
-# rust
-. "$HOME/.cargo/env"
+# cat replacement
+alias cat='bat'
