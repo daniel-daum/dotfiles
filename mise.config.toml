@@ -1,0 +1,13 @@
+# rename to config.toml
+# store a t  ~/.config/mise/config.toml
+[tools]
+bat = "latest"
+eza = "latest"
+go = "latest"
+node = "latest"
+rust = "latest"
+uv = "latest"
+pnpm = "latest"
+lazygit = "latest"
+java = "latest"
+just = "latest"
