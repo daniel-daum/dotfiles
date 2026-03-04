@@ -44,7 +44,6 @@ cask "yubico-authenticator"
 cask "zed"
 mas "Anybox", id: 1593408455
 mas "Brother iPrint&Scan", id: 1193539993
-mas "Command X", id: 6448461551
 mas "Developer", id: 640199958
 mas "Dropover", id: 1355679052
 mas "Goodnotes", id: 1444383602
