@@ -42,6 +42,7 @@ cask "tailscale-app"
 cask "warp"
 cask "yubico-authenticator"
 cask "zed"
+cask "spotify"
 mas "Anybox", id: 1593408455
 mas "Brother iPrint&Scan", id: 1193539993
 mas "Developer", id: 640199958
