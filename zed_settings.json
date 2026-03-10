@@ -8,8 +8,22 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   // practical
+  "ssh_connections": [
+    {
+      "host": "dxun",
+      "username": "maliciouspickle",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/home/maliciouspickle/starforge"
+          ]
+        }
+      ]
+    }
+  ],
   "terminal": {
-    "shell": "system"
+    "shell": "system",
   },
   "gutter": {
     "line_numbers": true,

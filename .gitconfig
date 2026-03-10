@@ -1,11 +1,15 @@
 [user]
 	name = daniel daum
 	email = daniel@danieldaum.net
-	signingkey = 2811D7C028D6F3393A21DDF51C248810516E97FF
+	signingkey = /Users/daniel/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/PublicKeys/7a42c4933fb6cbb7d73547a75e757882.pub
 [push]
 	autoSetupRemote = true
 [commit]
 	gpgsign = true
+[gpg]
+	format = ssh
+[gpg "ssh"]
+    allowedSignersFile = ~/.gitallowedsigners
 [tag]
 	gpgSign = true
 [alias]
