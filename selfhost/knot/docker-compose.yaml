@@ -1,0 +1,35 @@
+services:
+  knot:
+    image: tngl/knot:v1.10.0-alpha
+    env_file:
+      - .env
+    volumes:
+      - knot_keys:/etc/ssh/keys
+      - knot_repos:/home/git/repositories
+      - knot_app:/app
+    ports:
+      - "${TAILSCALE_IP}:2222:22"
+    restart: always
+    networks:
+      - knot_net
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    restart: always
+    command: tunnel --no-autoupdate run
+    environment:
+      TUNNEL_TOKEN: ${CF_TUNNEL_TOKEN}
+    networks:
+      - knot_net
+networks:
+  knot_net:
+volumes:
+  knot_keys:
+    name: knot_keys
+    driver: local
+  knot_repos:
+    name: knot_repos
+    driver: local
+  knot_app:
+    name: knot_app
+    driver: local
