@@ -1,0 +1,16 @@
+# Halloy config.
+#
+# For a complete list of available options,
+# please visit https://halloy.chat/configuration.html
+# /Users/daniel/Library/Application Support/halloy/config.toml
+
+[servers.liberachat]
+nickname = "maliciouspickle"
+server = "irc.libera.chat"
+channels = ["#halloy"]
+port = 6697
+use_tls = true
+
+[servers.liberachat.sasl.plain]
+username = ""
+password = ""

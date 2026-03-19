@@ -1,0 +1,21 @@
+services:
+  radicale:
+    image: ghcr.io/kozea/radicale:3.6.0
+    container_name: radicale
+    ports:
+      - 5232:5232
+    volumes:
+      - radicale-data:/var/lib/radicale
+      - ./config:/config:ro
+    environment:
+      RADICALE_CONFIG: /config/config
+    restart: unless-stopped
+    networks:
+      - holonet
+volumes:
+  radicale-data:
+    name: radicale-data
+    driver: local
+networks:
+  holonet:
+    external: true

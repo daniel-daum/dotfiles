@@ -11,10 +11,12 @@ services:
       - 5432:5432
     networks:
       - holonet
+
 volumes:
   postgres-data:
     name: postgres-data
     driver: local
+
 networks:
   holonet:
     name: holonet

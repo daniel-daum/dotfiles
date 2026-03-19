@@ -1,0 +1,26 @@
+services:
+  knot:
+    image: tngl/knot:v1.10.0-alpha
+    container_name: knot
+    env_file:
+      - .env
+    volumes:
+      - knot-keys:/etc/ssh/keys
+      - knot-repos:/home/git/repositories
+      - knot-app:/app
+    restart: always
+    networks:
+      - holonet
+networks:
+  holonet:
+    external: true
+volumes:
+  knot-keys:
+    name: knot-keys
+    driver: local
+  knot-repos:
+    name: knot-repos
+    driver: local
+  knot-app:
+    name: knot-app
+    driver: local

@@ -1,0 +1,14 @@
+services:
+  newt:
+    image: fosrl/newt:1.10.2
+    container_name: newt
+    restart: unless-stopped
+    env_file:
+      - .env
+    networks:
+      - holonet
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+networks:
+  holonet:
+    external: true

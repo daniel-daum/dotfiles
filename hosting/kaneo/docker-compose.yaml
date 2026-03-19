@@ -1,0 +1,38 @@
+services:
+  api:
+    image: ghcr.io/usekaneo/api:latest
+    ports:
+      - "1337:1337"
+    env_file:
+      - .env
+    volumes:
+      - kaneoapi-data:/app/data
+    container_name: kaneo-api
+    networks:
+      - holonet
+    restart: unless-stopped
+
+  web:
+    image: ghcr.io/usekaneo/web:latest
+    container_name: kaneo-web
+    ports:
+      - "5173:5173"
+    env_file:
+      - .env
+    networks:
+      - holonet
+    depends_on:
+      - api
+    restart: unless-stopped
+
+networks:
+  holonet:
+    external: true
+
+volumes:
+  kaneoapi-data:
+    name: kaneoapi-data
+    driver: local
+  minio-data:
+    name: minio-data
+    driver: local

@@ -1,0 +1,20 @@
+# copy to ~/.config/jj/config.toml
+[user]
+name = "daniel daum"
+email = "daniel@danieldaum.net"
+
+[ui]
+default-command = "log"
+pager = "less -FRX"
+diff.format = "git"
+
+[signing]
+behavior = "own"
+backend = "ssh"
+key = "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAVwC6JAlpdvuyLJE+PvIkbBesM+P5yeyLfeDwP5CSndFPYPsznRWlu7cyn2kh1EoSevPXhP30QBXanWpnyvQvc= coruscant@secretive.coruscant.local"  # from Secretive
+
+[signing.backends.ssh]
+allowed-signers = "/Users/daniel/.gitallowedsigners"
+
+[remotes.origin]
+auto-track-bookmarks = "glob:*"

@@ -1,7 +1,7 @@
-tap "damianb-bitflipper/tap"
 tap "macos-fuse-t/cask"
 brew "antidote"
 brew "git-lfs"
+brew "httpd"
 brew "jq"
 brew "mas"
 brew "mise"
@@ -26,6 +26,7 @@ cask "macos-fuse-t/cask/fuse-t-sshfs"
 cask "godot"
 cask "gpg-suite"
 cask "greenfoot"
+cask "halloy"
 cask "iina"
 cask "linear-linear"
 cask "little-snitch"
@@ -47,9 +48,11 @@ cask "slack"
 cask "spotify"
 cask "steam"
 cask "tailscale-app"
+cask "voiceink"
 cask "warp"
 cask "yubico-authenticator"
 cask "zed"
+mas "Aeronaut", id: 6670275450
 mas "Anybox", id: 1593408455
 mas "Brother iPrint&Scan", id: 1193539993
 mas "Consent-O-Matic", id: 1606897889
@@ -61,6 +64,7 @@ mas "LiquidFetch", id: 6757637185
 mas "Mapper", id: 1589391989
 mas "Numbers", id: 361304891
 mas "Pages", id: 361309726
+mas "Panels", id: 1236567663
 mas "Photomator", id: 1444636541
 mas "Pixelmator Pro", id: 1289583905
 mas "Scrap Paper", id: 1448441317

@@ -20,6 +20,18 @@
           ]
         }
       ]
+    },
+    {
+      "host": "narshaddaa",
+      "username": "maliciouspickle",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/home/maliciouspickle/starforge"
+          ]
+        }
+      ]
     }
   ],
   "terminal": {
@@ -78,6 +90,6 @@
   // telemetry
   "telemetry": {
     "diagnostics": false,
-    "metrics": false,
-  },
+    "metrics": false
+  }
 }

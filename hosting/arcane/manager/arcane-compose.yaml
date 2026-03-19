@@ -1,12 +1,12 @@
 services:
   arcane:
-    image: ghcr.io/getarcaneapp/arcane:latest
+    image: ghcr.io/getarcaneapp/arcane:v1.16.2
     container_name: arcane
     restart: unless-stopped
     # extra_hosts:
     #     - "${ARCANE_AGENT_HOST:?missing}:${ARCANE_AGENT_IP:?missing}"
     env_file:
-      - .env
+      - .env # comment out when using encrypted .env
     ports:
       - 3552:3552
     volumes:
