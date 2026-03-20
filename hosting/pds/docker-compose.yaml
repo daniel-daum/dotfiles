@@ -1,0 +1,22 @@
+services:
+    pds:
+        container_name: pds
+        image: ghcr.io/bluesky-social/pds:0.4
+        restart: unless-stopped
+        env_file:
+            - .env
+        ports:
+            - "3000:3000"
+        networks:
+            - holonet
+        volumes:
+            - pds-data:/pds
+
+volumes:
+    pds-data:
+        name: pds-data
+        driver: local
+
+networks:
+    holonet:
+        external: true
