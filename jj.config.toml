@@ -5,8 +5,11 @@ email = "daniel@danieldaum.net"
 
 [ui]
 default-command = "log"
-pager = "less -FRX"
+pager = "delta"
 diff.format = "git"
+
+[git]
+write-change-id-header = true
 
 [signing]
 behavior = "own"
@@ -18,3 +21,55 @@ allowed-signers = "/Users/daniel/.gitallowedsigners"
 
 [remotes.origin]
 auto-track-bookmarks = "glob:*"
+
+
+[template-aliases]
+"format_timestamp(timestamp)" = "timestamp.ago()"
+
+[templates]
+log_node = '''
+  label("node",
+    coalesce(
+      if(!self, label("elided", "~")),
+      if(current_working_copy, label("working_copy", "@")),
+      if(conflict, label("conflict", "×")),
+      if(immutable, label("immutable", "*")),
+      label("normal", "·")
+    )
+  )
+'''
+
+log = '''
+  if(root,
+    format_root_commit(self),
+    label(if(current_working_copy, "working_copy"),
+      concat(
+        separate(" ",
+          change_id.short(),
+          if(empty, label("empty", "(empty)")),
+          if(description,
+            description.first_line(),
+            label(if(empty, "empty"), description_placeholder),
+          ),
+          bookmarks,
+          if(conflict, label("conflict", "conflict")),
+        ) ++ "\n",
+      ),
+    )
+  )
+'''
+
+draft_commit_description = '''
+  concat(
+    coalesce(description, default_commit_description, "\n"),
+    surround(
+      "\nJJ: This commit contains the following changes:\n", "",
+      indent("JJ:     ", diff.stat(72)),
+    ),
+    "\nJJ: ignore-rest\n",
+    diff.git(),
+  )
+'''
+
+[aliases]
+tug = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@-"]
