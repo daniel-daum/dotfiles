@@ -4,41 +4,44 @@ name = "daniel daum"
 email = "daniel@danieldaum.net"
 
 [ui]
+pager = "delta"                # pipe all output through delta for syntax-highlighted diffs
+diff.format = "git"            # use unified git-style diffs (required for delta to render correctly)
+diff.tool = "difftastic"       # use difftastic as the diff engine for structural, syntax-aware diffs
 default-command = "log"
-pager = "delta"
-diff.format = "git"
 
 [git]
-write-change-id-header = true
+write-change-id-header = true  # embed jj change-id in git commit object; enables change tracking across force pushes on Tangled
+sign-on-push = true            # sign commits at push time only
 
 [signing]
-behavior = "own"
-backend = "ssh"
-key = "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAVwC6JAlpdvuyLJE+PvIkbBesM+P5yeyLfeDwP5CSndFPYPsznRWlu7cyn2kh1EoSevPXhP30QBXanWpnyvQvc= coruscant@secretive.coruscant.local"  # from Secretive
+behavior = "drop"              # drop signatures on rewrite; rely solely on sign-on-push
+backend = "ssh"                # use SSH for commit signing
+key = "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBC+8q3HyMfBSLDTRjrHvXcH49947NPsNHq6TYwh+GzAtO0dF7ROZOmatuhvN5jXH/b9ybTJwIGyQweCZNTmuVJg= Coruscant@secretive.coruscant.local"  # public key from Secretive
 
 [signing.backends.ssh]
-allowed-signers = "/Users/daniel/.gitallowedsigners"
+allowed-signers = "/Users/daniel/.gitallowedsigners"  # file used to verify incoming SSH-signed commits
 
-[remotes.origin]
-auto-track-bookmarks = "glob:*"
-
-
+# renders all timestamps as relative time e.g. "3 hours ago"
 [template-aliases]
 "format_timestamp(timestamp)" = "timestamp.ago()"
 
-[templates]
-log_node = '''
-  label("node",
-    coalesce(
-      if(!self, label("elided", "~")),
-      if(current_working_copy, label("working_copy", "@")),
-      if(conflict, label("conflict", "×")),
-      if(immutable, label("immutable", "*")),
-      label("normal", "·")
-    )
-  )
-'''
 
+# [remotes.origin]
+# auto-track-bookmarks = ["glob:danieldaum/*", "main"]
+
+# [templates]
+# git_push_bookmark = '"danieldaum/" ++ change_id.short()'
+
+# my aliases
+[aliases]
+init  = ["git", "init"]
+push  = ["git", "push"]
+pull  = ["git", "fetch"]
+clone = ["git", "clone"]
+tug = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@-"]
+
+# compact single-line log: change ID, description, bookmarks, conflict flag; no author or timestamp
+[templates]
 log = '''
   if(root,
     format_root_commit(self),
@@ -59,17 +62,6 @@ log = '''
   )
 '''
 
-draft_commit_description = '''
-  concat(
-    coalesce(description, default_commit_description, "\n"),
-    surround(
-      "\nJJ: This commit contains the following changes:\n", "",
-      indent("JJ:     ", diff.stat(72)),
-    ),
-    "\nJJ: ignore-rest\n",
-    diff.git(),
-  )
-'''
-
-[aliases]
-tug = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@-"]
+[merge-tools.difftastic]
+program = "difft"
+diff-args = ["--color=always", "--display=side-by-side", "$left", "$right"]  # always colorize, side-by-side layout

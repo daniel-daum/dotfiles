@@ -15,14 +15,18 @@ alias ll="eza -al --group-directories-first --icons --git --color=auto --long --
 # cat replacement
 alias cat='bat'
 
-# jj
-alias jjp='jj git push'
-alias jja='jj log -r "all()"'
-
 # pnpm
 export PNPM_HOME="/Users/daniel/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
-# pnpm end
+
+# jj commit
+jj() {
+  if [[ "$1" == "commit" ]]; then
+    command jj new && command jj tug && command jj push
+  else
+    command jj "$@"
+  fi
+}

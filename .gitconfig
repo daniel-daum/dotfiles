@@ -1,7 +1,7 @@
  [user]
 	name = daniel daum
 	email = daniel@danieldaum.net
-	signingkey = /Users/daniel/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/PublicKeys/7a42c4933fb6cbb7d73547a75e757882.pub
+	signingkey = /Users/daniel/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/PublicKeys/de7dcf62affac3514c9b45b3da139182.pub
 [push]
 	autoSetupRemote = true
 [commit]
@@ -31,6 +31,32 @@
 
 	# cleanup
 	sweep = "!git branch --merged | grep -v '\\*\\|main\\|master' | xargs -n 1 git branch -d"
+
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    dark = true      # or light = true, or omit for auto-detection
+
+[merge]
+    conflictStyle = zdiff3
+
+[diff]
+    tool = difftastic
+
+[difftool "difftastic"]
+    cmd = difft "$LOCAL" "$REMOTE"
+
+[difftool]
+    prompt = false
+
+[pager]
+    difftool = less -R
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
