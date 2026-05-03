@@ -1,0 +1,18 @@
+services:
+  yattee-server:
+    image: yattee/yattee-server:1.0.2@sha256:7f615d3db3dd4055244c6ad18c680888ea2b3380acc16f2b3a778ac31fa31ff7
+    container_name: yattee-server
+    ports:
+      - "8085:8085"
+    volumes:
+      - yatte-downloads:/downloads
+      - yatte-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  yatte-downloads:
+    name: yatte-downloads
+    driver: local
+  yatte-data:
+    name: yatte-data
+    driver: local
