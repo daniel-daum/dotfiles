@@ -1,12 +1,8 @@
 services:
   arcane:
-    image: ghcr.io/getarcaneapp/arcane:v1.16.2
+    image: ghcr.io/getarcaneapp/arcane:v1.18.1@sha256:6d8a51ddca2399106ea20da9db17271a91dd97150cada449aba4edce2ae682c2
     container_name: arcane
     restart: unless-stopped
-    # extra_hosts:
-    #     - "${ARCANE_AGENT_HOST:?missing}:${ARCANE_AGENT_IP:?missing}"
-    env_file:
-      - .env # comment out when using encrypted .env
     ports:
       - 3552:3552
     volumes:
@@ -14,6 +10,16 @@ services:
       - arcane-data:/app/data
     networks:
       - holonet
+    environment:
+      - PUID
+      - PGID
+      - ENCRYPTION_KEY
+      - JWT_SECRET
+      - APP_URL
+      - LOG_LEVEL
+      - LOG_JSON
+      - OIDC_ENABLED
+      - DATABASE_URL
 volumes:
   arcane-data:
     name: arcane-data
