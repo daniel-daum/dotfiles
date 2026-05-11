@@ -1,0 +1,5 @@
+# make OMZ work nicely under Antidote
+getantidote/use-omz
+
+# load only the robbyrussell theme from OMZ
+ohmyzsh/ohmyzsh path:themes/robbyrussell.zsh-theme

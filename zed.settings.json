@@ -1,0 +1,125 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+    // ---------- remote dev  ----------
+
+    "ssh_connections": [
+        {
+            "host": "dxun",
+            "username": "maliciouspickle",
+            "args": [],
+            "projects": [
+                {
+                    "paths": ["/home/maliciouspickle/starforge/./"]
+                }
+            ]
+        },
+        {
+            "host": "orb",
+            "args": [],
+            "projects": [
+                {
+                    "paths": ["/home/daniel"]
+                },
+                {
+                    "paths": ["/home/daniel/starforge/.profile"]
+                },
+                {
+                    "paths": ["/home/daniel/starforge/dotfiles"]
+                }
+            ]
+        },
+        {
+            "host": "ziost",
+            "username": "maliciouspickle",
+            "args": [],
+            "projects": [
+                {
+                    "paths": ["/home/maliciouspickle/starforge/./"]
+                }
+            ]
+        }
+    ],
+    // ---------- ai ----------
+
+    "agent_servers": {
+        "claude-acp": {
+            "type": "registry"
+        }
+    },
+    // ---------- config ----------
+
+    "cli_default_open_behavior": "new_window",
+    "code_lens": "on",
+    "languages": {
+        "Go": {
+            "colorize_brackets": true,
+            "indent_guides": {
+                "background_coloring": "indent_aware"
+            }
+        }
+    },
+    "restore_on_startup": "launchpad",
+    "redact_private_values": false,
+    "agent": {
+        "dock": "right",
+        "favorite_models": [],
+        "model_parameters": []
+    },
+    "git_panel": {
+        "dock": "left"
+    },
+    "outline_panel": {
+        "dock": "left"
+    },
+    "project_panel": {
+        "dock": "left"
+    },
+    "collaboration_panel": {
+        "button": false
+    },
+    "inlay_hints": {
+        "enabled": true
+    },
+    "session": {
+        "trust_all_worktrees": true
+    },
+    "autosave": {
+        "after_delay": {
+            "milliseconds": 1000
+        }
+    },
+    "ensure_final_newline_on_save": true,
+    "remove_trailing_whitespace_on_save": true,
+    "format_on_save": "on",
+    "soft_wrap": "editor_width",
+
+    // ---------- visual ----------
+
+    "icon_theme": {
+        "mode": "dark",
+        "light": "Material Icon Theme",
+        "dark": "Material Icon Theme"
+    },
+
+    "ui_font_size": 16,
+    "buffer_font_size": 15,
+    "theme": {
+        "mode": "dark",
+        "light": "ultraViolet Blur",
+        "dark": "ultraViolet Blur"
+    },
+
+    // ---------- telemetry ----------
+
+    "telemetry": {
+        "diagnostics": false,
+        "metrics": false
+    }
+}
