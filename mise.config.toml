@@ -14,3 +14,10 @@ golangci-lint = "latest"
 duckdb = "latest"
 delta = "latest"
 helix = "latest"
+node = "latest"
+"npm:vite" = "latest"
+
+[settings]
+
+[settings.npm]
+package_manager = "pnpm"
