@@ -3,7 +3,7 @@ export SSH_AUTH_SOCK=/Users/daniel/Library/Containers/com.maxgoedjen.Secretive.S
 
 # antidote
 source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
-ZSH_THEME="robbyrussell"
+setopt PROMPT_SUBST
 antidote load
 
 # eza ls replacement (long, all files, human-readable, icons, git info)

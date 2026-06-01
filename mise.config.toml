@@ -1,7 +1,6 @@
 [tools]
 bat = "latest"
 eza = "latest"
-go = "latest"
 jq = "latest"
 rust = "latest"
 uv = "latest"
@@ -10,12 +9,14 @@ java = "latest"
 jj = "latest"
 jjui = "latest"
 difftastic = "latest"
-golangci-lint = "latest"
 duckdb = "latest"
 delta = "latest"
 helix = "latest"
 node = "latest"
 "npm:vite" = "latest"
+claude = "latest"
+just = "latest"
+"go:golang.org/x/tools/gopls" = "0.21.1"
 
 [settings]
 

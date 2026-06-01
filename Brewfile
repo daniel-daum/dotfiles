@@ -1,4 +1,5 @@
 tap "hewigovens/tap"
+tap "siddharthvaddem/openscreen"
 brew "antidote"
 brew "bat"
 brew "difftastic"
@@ -21,27 +22,36 @@ cask "calibre"
 cask "claude"
 cask "claude-code"
 cask "cork"
+cask "crossover"
 cask "daisydisk"
 cask "dbngin"
+cask "discord"
+cask "downie"
+cask "firefox"
 cask "font-geist-mono"
+cask "font-ioskeley-mono"
 cask "godot"
 cask "gpg-suite"
+cask "greenfoot"
 cask "iina"
 cask "hewigovens/tap/jayjay"
 cask "little-snitch"
 cask "mac-mouse-fix"
+cask "obsidian"
 cask "octarine"
+cask "siddharthvaddem/openscreen/openscreen"
 cask "orbstack"
 cask "orion"
+cask "permute"
 cask "proton-drive"
 cask "proton-mail"
 cask "proton-pass"
 cask "raycast"
 cask "rectangle"
-cask "runelite"
 cask "secretive"
 cask "signal"
 cask "slack"
+cask "steam"
 cask "tailscale-app"
 cask "warp"
 cask "yubico-authenticator"
@@ -51,9 +61,12 @@ mas "Brother iPrint&Scan", id: 1193539993
 mas "Clustta", id: 6748349288
 mas "Developer", id: 640199958
 mas "Dropover", id: 1355679052
+mas "FileMate", id: 6761747283
+mas "iA Writer", id: 775737590
 mas "Kagi for Safari", id: 1622835804
 mas "Keynote", id: 361285480
 mas "LiquidFetch", id: 6757637185
+mas "LiquidFin", id: 6755673532
 mas "Numbers", id: 361304891
 mas "Pages", id: 361309726
 mas "Panels", id: 1236567663

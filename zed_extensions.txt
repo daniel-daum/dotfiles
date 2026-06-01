@@ -1,0 +1,17 @@
+HTML
+TOML
+Material Icon Theme
+ultraviolet
+Dockerfile
+Docker Compose
+env
+SQL
+Justfile
+Rainbow CSV
+Swift
+Nix
+Emmet
+Git Firefly
+XML
+Typst
+Go Sum Highlighting

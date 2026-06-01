@@ -7,54 +7,39 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-    // ---------- remote dev  ----------
-
     "ssh_connections": [
-        {
-            "host": "dxun",
-            "username": "maliciouspickle",
-            "args": [],
-            "projects": [
-                {
-                    "paths": ["/home/maliciouspickle/starforge/./"]
-                }
-            ]
-        },
         {
             "host": "orb",
             "args": [],
             "projects": [
                 {
-                    "paths": ["/home/daniel"]
-                },
-                {
-                    "paths": ["/home/daniel/starforge/.profile"]
-                },
-                {
                     "paths": ["/home/daniel/starforge/dotfiles"]
                 }
-            ]
-        },
-        {
-            "host": "ziost",
-            "username": "maliciouspickle",
-            "args": [],
-            "projects": [
-                {
-                    "paths": ["/home/maliciouspickle/starforge/./"]
-                }
-            ]
+            ],
+            "nickname": "mustafar"
         }
     ],
-    // ---------- ai ----------
-
+    "diagnostics": {
+        "inline": {
+            "enabled": true
+        }
+    },
+    "git": {
+        "inline_blame": {
+            "show_commit_summary": true
+        }
+    },
+    "colorize_brackets": true,
+    "ui_font_family": "Ioskeley Mono",
+    "buffer_font_family": "Ioskeley Mono",
+    "terminal": {
+        "font_family": "Ioskeley Mono"
+    },
     "agent_servers": {
         "claude-acp": {
             "type": "registry"
         }
     },
-    // ---------- config ----------
-
     "cli_default_open_behavior": "new_window",
     "code_lens": "on",
     "languages": {
@@ -73,12 +58,15 @@
         "model_parameters": []
     },
     "git_panel": {
+        "tree_view": true,
+        "file_icons": false,
         "dock": "left"
     },
     "outline_panel": {
         "dock": "left"
     },
     "project_panel": {
+        "git_status_indicator": true,
         "dock": "left"
     },
     "collaboration_panel": {
@@ -100,14 +88,11 @@
     "format_on_save": "on",
     "soft_wrap": "editor_width",
 
-    // ---------- visual ----------
-
     "icon_theme": {
         "mode": "dark",
         "light": "Material Icon Theme",
         "dark": "Material Icon Theme"
     },
-
     "ui_font_size": 16,
     "buffer_font_size": 15,
     "theme": {
@@ -115,8 +100,6 @@
         "light": "ultraViolet Blur",
         "dark": "ultraViolet Blur"
     },
-
-    // ---------- telemetry ----------
 
     "telemetry": {
         "diagnostics": false,
