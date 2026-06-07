@@ -1,3 +1,7 @@
+# do not track
+export DO_NOT_TRACK=1
+export HOMEBREW_NO_ANALYTICS=1
+
 # ssh auth
 export SSH_AUTH_SOCK=/Users/daniel/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh
 
@@ -11,3 +15,7 @@ alias ll="eza -al --group-directories-first --icons --git --color=auto --long --
 
 # cat replacement
 alias cat='bat'
+
+# drift
+export DRIFT_TIMEOUT=120   # seconds of inactivity (default: 120)
+eval "$(drift shell-init zsh)"

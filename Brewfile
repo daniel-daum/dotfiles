@@ -1,4 +1,5 @@
 tap "hewigovens/tap"
+tap "phlx0/drift"
 tap "siddharthvaddem/openscreen"
 brew "antidote"
 brew "bat"
@@ -12,6 +13,7 @@ brew "jq"
 brew "just"
 brew "mas"
 brew "mise"
+brew "phlx0/drift/drift"
 cask "alt-tab"
 cask "anytype"
 cask "appcleaner"
@@ -20,7 +22,6 @@ cask "bloom"
 cask "bruno"
 cask "calibre"
 cask "claude"
-cask "claude-code"
 cask "cork"
 cask "crossover"
 cask "daisydisk"
@@ -32,16 +33,13 @@ cask "font-geist-mono"
 cask "font-ioskeley-mono"
 cask "godot"
 cask "gpg-suite"
-cask "greenfoot"
 cask "iina"
 cask "hewigovens/tap/jayjay"
 cask "little-snitch"
 cask "mac-mouse-fix"
-cask "obsidian"
 cask "octarine"
 cask "siddharthvaddem/openscreen/openscreen"
 cask "orbstack"
-cask "orion"
 cask "permute"
 cask "proton-drive"
 cask "proton-mail"
@@ -74,6 +72,8 @@ mas "Pixelmator Pro", id: 1289583905
 mas "Scrap Paper", id: 1448441317
 mas "Sink It for Reddit", id: 6449873635
 mas "SnippetsLab", id: 1006087419
+mas "Sprout", id: 6752939873
 mas "TestFlight", id: 899247664
+mas "Tim", id: 1449619230
 mas "Wipr", id: 1662217862
 mas "Xcode", id: 497799835
