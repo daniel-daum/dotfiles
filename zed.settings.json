@@ -1,100 +1,132 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
 {
-    "ssh_connections": [
+  "prettier": {
+    "allowed": true
+  },
+  "indent_guides": {
+    "background_coloring": "indent_aware"
+  },
+  "ssh_connections": [
+    {
+      "host": "narshaddaa",
+      "args": ["-A"],
+      "projects": [
         {
-            "host": "orb",
-            "args": [],
-            "projects": [
-                {
-                    "paths": ["/home/daniel/starforge/dotfiles"]
-                }
-            ],
-            "nickname": "mustafar"
+          "paths": ["/home/maliciouspickle/services"]
         }
-    ],
-    "diagnostics": {
-        "inline": {
-            "enabled": true
-        }
-    },
-    "git": {
-        "inline_blame": {
-            "show_commit_summary": true
-        }
-    },
-    "colorize_brackets": true,
-    "ui_font_family": "Ioskeley Mono",
-    "buffer_font_family": "Ioskeley Mono",
-    "terminal": {
-        "font_family": "Ioskeley Mono"
-    },
-    "agent_servers": {
-        "claude-acp": {
-            "type": "registry"
-        }
-    },
-    "cli_default_open_behavior": "new_window",
-    "code_lens": "on",
-    "languages": {
-        "Go": {
-            "colorize_brackets": true,
-            "indent_guides": {
-                "background_coloring": "indent_aware"
-            }
-        }
-    },
-    "restore_on_startup": "launchpad",
-    "redact_private_values": false,
-    "agent": {
-        "dock": "right",
-        "favorite_models": [],
-        "model_parameters": []
-    },
-    "git_panel": {
-        "tree_view": true,
-        "file_icons": false,
-        "dock": "left"
-    },
-    "outline_panel": {
-        "dock": "left"
-    },
-    "project_panel": {
-        "git_status_indicator": true,
-        "dock": "left"
-    },
-    "collaboration_panel": {
-        "button": false
-    },
-    "inlay_hints": {
-        "enabled": true
-    },
-    "session": {
-        "trust_all_worktrees": true
-    },
-    "autosave": {
-        "after_delay": {
-            "milliseconds": 1000
-        }
-    },
-    "ensure_final_newline_on_save": true,
-    "remove_trailing_whitespace_on_save": true,
-    "format_on_save": "on",
-    "soft_wrap": "editor_width",
-
-    "icon_theme": {
-        "mode": "dark",
-        "light": "Material Icon Theme",
-        "dark": "Material Icon Theme"
-    },
-    "ui_font_size": 16,
-    "buffer_font_size": 15,
-    "theme": {
-        "mode": "dark",
-        "light": "ultraViolet Blur",
-        "dark": "ultraViolet Blur"
-    },
-
-    "telemetry": {
-        "diagnostics": false,
-        "metrics": false
+      ]
     }
+  ],
+  "diff_view_style": "split",
+  "diagnostics": {
+    "inline": {
+      "enabled": true
+    }
+  },
+  "git": {
+    "inline_blame": {
+      "show_commit_summary": true
+    }
+  },
+  "colorize_brackets": true,
+  "ui_font_family": "Ioskeley Mono",
+  "buffer_font_family": "Ioskeley Mono",
+  "terminal": {
+    "font_family": "Ioskeley Mono"
+  },
+  "agent_servers": {
+    "pi-acp": {
+      "type": "registry"
+    },
+    "claude-acp": {
+      "type": "registry"
+    }
+  },
+  "cli_default_open_behavior": "new_window",
+  "code_lens": "on",
+  "languages": {
+    "Go": {
+      "colorize_brackets": true,
+      "indent_guides": {
+        "background_coloring": "indent_aware"
+      }
+    },
+    "HTML": {
+      "formatter": "language_server"
+    }
+  },
+  "restore_on_startup": "launchpad",
+  "redact_private_values": true,
+  "agent": {
+    "default_model": {
+      "provider": "lmstudio",
+      "model": "qwen/qwen3.6-35b-a3b",
+      "enable_thinking": false
+    },
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "git_panel": {
+    "tree_view": true,
+    "file_icons": false,
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "project_panel": {
+    "git_status_indicator": true,
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "button": false
+  },
+  "inlay_hints": {
+    "enabled": true
+  },
+  "session": {
+    "trust_all_worktrees": true
+  },
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000
+    }
+  },
+  "ensure_final_newline_on_save": true,
+  "remove_trailing_whitespace_on_save": true,
+  "format_on_save": "on",
+  "soft_wrap": "editor_width",
+
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Material Icon Theme",
+    "dark": "Material Icon Theme"
+  },
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "theme": {
+    "mode": "dark",
+    "light": "ultraViolet Blur",
+    "dark": "ultraViolet"
+  },
+
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+
+  // ====== developmental feature flag ======
+  //
+  "feature_flags": {
+    "notebooks": "on",
+    "tabular-data-preview": "on"
+  }
 }
