@@ -16,6 +16,9 @@ alias ll="eza -al --group-directories-first --icons --git --color=auto --long --
 # cat replacement
 alias cat='bat'
 
-# drift
-export DRIFT_TIMEOUT=120   # seconds of inactivity (default: 120)
-eval "$(drift shell-init zsh)"
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/daniel/.lmstudio/bin"
+# End of LM Studio CLI section
+
+# mise
+eval "$(mise activate zsh)"
