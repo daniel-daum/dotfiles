@@ -23,3 +23,14 @@ steps:
     environment:
       GITHUB_USERNAME: "daniel-daum"
       GITHUB_REPO_NAME: "dotfiles"
+
+  - name: "Mirror to Gitea"
+    command: |
+      git fetch --unshallow origin || true
+      git fetch origin refs/heads/main:refs/heads/main
+      git remote add gitea https://${GITEA_USERNAME}:${GITEA_TOKEN}@${GITEA_HOST}/${GITEA_USERNAME}/${GITEA_REPO_NAME}.git
+      git push gitea refs/heads/main:refs/heads/main --force
+    environment:
+      GITEA_USERNAME: "daniel-daum"
+      GITEA_REPO_NAME: "dotfiles"
+      GITEA_HOST: "git.danieldaum.net"
