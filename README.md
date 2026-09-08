@@ -2,14 +2,6 @@
 
 Personal config for my macOS and Linux (OrbStack) machines: shell, editor, terminal, VCS, and toolchain setup.
 
-## Notable choices
-
-- **[Jujutsu (jj)](https://jj-vcs.github.io/jj/)** as the daily VCS, backed by git. Commits are SSH-signed at push time via [Secretive](https://github.com/maxgoedjen/secretive) (secure enclave-backed SSH keys), verified against `~/.gitallowedsigners`.
-- **[mise](https://mise.jdx.dev/)** manages language runtimes and CLI tool versions.
-- **[difftastic](https://difftastic.wilfred.me.uk/)** (structural diffs) and **[delta](https://github.com/dandavison/delta)** (syntax highlighting) for diffs in both git and jj.
-- Primary repo lives on a self-hosted [Gitea](https://about.gitea.com/) instance (`git.danieldaum.net`). A CI job (`.gitea/workflows/mirror.yaml`) mirrors `main` to GitHub and [Tangled](https://tangled.sh/) on push.
-- Linux dev machine is an OrbStack VM (`mustafar`), provisioned via the steps in `mustafar.txt`.
-
 ## Layout
 
 | File | Purpose |
