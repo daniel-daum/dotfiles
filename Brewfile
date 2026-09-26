@@ -1,9 +1,18 @@
+tap "bnimit/tap", trusted: true
 # Plugin manager for zsh, inspired by antigen and antibody
 brew "antidote"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# Modern, maintained replacement for ls
+brew "eza"
 # Mac App Store command-line interface
 brew "mas"
 # Polyglot runtime manager (asdf rust clone)
 brew "mise"
+# Open-source, cross-platform JavaScript runtime environment
+brew "node"
+# Library to create, extract, and modify Windows Imaging files
+brew "wimlib"
 # Enable Windows-like alt-tab
 cask "alt-tab"
 # Local-first and end-to-end encrypted notes app
@@ -18,10 +27,6 @@ cask "bruno"
 cask "calibre"
 # Anthropic's official Claude AI desktop app
 cask "claude"
-# GUI companion app for Homebrew
-cask "cork"
-# Disk space visualiser
-cask "daisydisk"
 # Voice and text chat software
 cask "discord"
 # Downloads videos from different websites
@@ -29,53 +34,55 @@ cask "downie"
 cask "font-ioskeley-mono"
 # 2D and 3D game engine
 cask "godot"
-# Tools to protect your emails and files
-cask "gpg-suite"
-# Free and open-source media player
-cask "iina"
+# Homebrew's official GUI
+cask "homebrew-app"
+# Host-based application firewall
+cask "little-snitch"
 # Discover, download, and run local LLMs
 cask "lm-studio"
+# AI agent for working with open models
+cask "lm-studio-bionic"
 # Mouse utility to add gesture functions and smooth scrolling to 3rd party mice
 cask "mac-mouse-fix"
+# Tool to create bootable USB installers
+cask "macusb"
+# Deep clean, analyze, and optimize app
+cask "mole-app"
+# VPN client
+cask "mullvad-vpn"
 # Replacement for Docker Desktop
 cask "orbstack"
-# WebKit based web browser
-cask "orion"
 # Converts and edits video, audio or image files
 cask "permute"
-# Client for Proton Drive
-cask "proton-drive"
 # Client for Proton Mail and Proton Calendar
 cask "proton-mail"
-# Desktop client for Proton Meet
-cask "proton-meet"
 # Desktop client for Proton Pass
 cask "proton-pass"
+# Control your tools with a few keystrokes
+cask "raycast"
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
 # Store SSH keys in the Secure Enclave
 cask "secretive"
-# Instant messaging application focusing on security
-cask "signal"
-# Team communication and collaboration software
-cask "slack"
+# Video game digital distribution service
+cask "steam"
 # Mesh VPN based on WireGuard
 cask "tailscale-app"
+# Configurable document editor that supports Markdown
+cask "typora"
 # Rust-based terminal
 cask "warp"
-# Full-featured companion app to the YubiKey
-cask "yubico-authenticator"
 # Multiplayer code editor
 cask "zed"
-mas "Anybox", id: 1593408455
 mas "Brother iPrint&Scan", id: 1193539993
-mas "clustta", id: 6748349288
 mas "Developer", id: 640199958
 mas "Dropover", id: 1355679052
 mas "FileMate", id: 6761747283
+mas "iA Writer", id: 775737590
 mas "Kagi for Safari", id: 1622835804
 mas "Keynote", id: 361285480
 mas "LiquidFetch", id: 6757637185
+mas "Mapper", id: 1589391989
 mas "Numbers", id: 361304891
 mas "Pages", id: 361309726
 mas "Pixelmator Pro", id: 1289583905
@@ -84,3 +91,4 @@ mas "Sink It", id: 6449873635
 mas "SnippetsLab", id: 1006087419
 mas "TestFlight", id: 899247664
 mas "Wipr", id: 1662217862
+mas "Xcode", id: 497799835

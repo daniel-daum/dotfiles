@@ -1,37 +1,38 @@
- [user]
+[user]
 	name = daniel daum
 	email = daniel@danieldaum.net
-	signingkey = # path to public key
-[push]
-	autoSetupRemote = true
+	signingkey = /Users/daniel/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/PublicKeys/d3b848b40c1cb5e70d1d6e3e2c9aa4ea.pub
 [commit]
 	gpgsign = true
+[tag]
+	gpgSign = true
 [gpg]
 	format = ssh
 [gpg "ssh"]
-    allowedSignersFile = ~/.gitallowedsigners
-[tag]
-	gpgSign = true
+	allowedSignersFile = ~/.gitallowedsigners
+[push]
+	autoSetupRemote = true
+[merge]
+	conflictStyle = zdiff3
 [alias]
-	# status
-	st = status --short --branch
-
-	# add
+	s  = status --short --branch
 	a  = add
 	ap = add --patch
-
-	# commit
-	c  = commit
-	cm = commit --message
-
-	# sync
+	aa = add --all
+	c  = commit --message
+	ca = commit --all --message
+	am = commit --amend --no-edit
 	pl = pull --rebase
 	ps = push
 	fp = fetch --prune
-
-	# cleanup
+	co = checkout
+	sw = switch
+	b  = branch
+	l  = log --oneline --graph --decorate -20
+	d  = diff
+	ds = diff --staged
+	undo = reset --soft HEAD~1
 	sweep = "!git branch --merged | grep -v '\\*\\|main\\|master' | xargs -n 1 git branch -d"
-
 [core]
     pager = delta
 
@@ -39,8 +40,8 @@
     diffFilter = delta --color-only
 
 [delta]
-    navigate = true  # use n and N to move between diff sections
-    dark = true      # or light = true, or omit for auto-detection
+    navigate = true
+    dark = true
 
 [merge]
     conflictStyle = zdiff3
@@ -56,7 +57,6 @@
 
 [pager]
     difftool = less -R
-
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f

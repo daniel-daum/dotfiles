@@ -2,9 +2,8 @@
 1. add standard packages
 ==============================
 sudo apt update
-sudo apt install -y nano vim-tiny less software-properties-common ca-certificates curl gnupg wget xz-utils git
-
 sudo apt modernize-sources
+sudo apt install -y nano vim-tiny less software-properties-common ca-certificates curl gnupg wget xz-utils git
 sudo apt update
 
 ==============================
@@ -14,28 +13,25 @@ curl https://mise.run | sh
 echo 'eval "$(~/.local/bin/mise activate bash)"' >> ~/.bashrc
 
 ==============================
-3. edit ~/.bashrc
-==============================
-hx ~/.bashrc -> update from dotfiles repo
-
-==============================
-4. push config files from host
-==============================
-orb push -m mustafar ~/.config/jj/config.toml  ~/.config/jj/config.toml
-orb push -m mustafar ~/.gitconfig  ~/.gitconfig
-orb push -m mustafar ~/.gitallowedsigners  ~/.gitallowedsigners
-
-# check permissions, may be created as root user not <current> user
-sudo chown -R daniel:daniel ~/.config/jj ~/.gitconfig ~/.gitallowedsigners
-chmod 700 ~/.config/jj
-chmod 600 ~/.config/jj/config.toml ~/.gitconfig ~/.gitallowedsigners
-
-OR
-
-cp ~/.config/jj/config.toml ~/OrbStack/mustafar/home/daniel/.config/jj/
-cp ~/.gitconfig ~/.gitallowedsigners ~/OrbStack/mustafar/home/daniel/
-
-==============================
-5. install global mise dependencies
+3. install global mise dependencies
 ==============================
 mise use -g bat delta difftastic eza helix jj jq ripgrep
+
+==============================
+4. edit ~/.bashrc
+==============================
+# mise
+eval "$(~/.local/bin/mise activate bash)"
+
+# go via mise
+export PATH="$HOME/go/bin:$PATH"
+
+# eza ls replacement
+alias ll="eza -al --group-directories-first --icons --git --color=auto --long --header --classify"
+
+# bat cat replacement
+alias cat='bat'
+
+
+
+
