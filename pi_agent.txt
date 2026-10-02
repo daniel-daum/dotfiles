@@ -1,0 +1,107 @@
+==============================
+1. install drop
+==============================
+sudo apt install -y passt
+ARCH=$(uname -m | sed 's/x86_64/amd64/; s/aarch64/arm64/')
+curl -o /tmp/drop -L "https://github.com/wrr/drop/releases/latest/download/drop-linux-$ARCH"
+mkdir -p ~/.local/bin
+install /tmp/drop ~/.local/bin/
+rm /tmp/drop
+source ~/.profile
+
+# check (should print root)
+unshare --user --map-root-user whoami
+
+==============================
+2. install pi + node via mise
+==============================
+mise use -g pi@latest
+mise use -g node@lts
+
+==============================
+3. install extensions (outside drop)
+==============================
+pi install npm:pi-lens
+pi install npm:@juicesharp/rpiv-todo
+pi install npm:@juicesharp/rpiv-ask-user-question
+pi install npm:pi-subagents
+pi install npm:context-mode
+
+==============================
+4. lm studio provider
+==============================
+hx ~/.pi/agent/models.json
+
+{
+  "providers": {
+    "lmstudio": {
+      "baseUrl": "http://host.orb.internal:1234/v1",
+      "api": "openai-completions",
+      "apiKey": "lm-studio",
+      "compat": {
+        "supportsDeveloperRole": false
+      },
+      "models": [
+        {
+          "id": "qwen3.6-35b-a3b-splash",
+          "name": "Qwen3.6 35B A3B",
+          "input": ["text", "image"],
+          "contextWindow": 262144,
+          "reasoning": false
+        },
+        {
+          "id": "swift-1.5-qwen3.8-27b-splash",
+          "name": "Swift 1.5 Qwen3.8 27B",
+          "input": ["text", "image"],
+          "contextWindow": 262144,
+          "reasoning": false
+        }
+      ]
+    }
+  }
+}
+
+==============================
+5. default model
+==============================
+hx ~/.pi/agent/settings.json
+
+# add (don't replace the file):
+"defaultProvider": "lmstudio",
+"defaultModel": "swift-1.5-qwen3.8-27b-splash"
+
+==============================
+6. drop base config
+==============================
+drop edit base
+
+# add to mounts = [ ... ]
+  "~/.local/share/mise",
+  "~/.config/mise",
+  "~/.pi::rw",
+
+==============================
+7. edit ~/.bashrc mise line
+==============================
+# replace:
+eval "$(~/.local/bin/mise activate bash)"
+# with:
+[ -x ~/.local/bin/mise ] && eval "$(~/.local/bin/mise activate bash)"
+
+==============================
+8. run pi in a project
+==============================
+cd ~/starforge/PROJECT
+drop init
+drop run pi
+
+# checks inside pi
+/model
+/todos
+# ask pi to run: ls ~/.ssh / touch .git/x  (both should fail)
+
+==============================
+9. zed terminal thread
+==============================
+# settings > terminal thread init command
+drop run pi

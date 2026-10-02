@@ -1,30 +1,44 @@
-=============================
+==============================
+0. create isolated vm with mounted project directory
+==============================
+orb create --isolated --forward-ssh-agent \
+  --mount /Users/daniel/starforge:/home/daniel/starforge \
+  ubuntu:resolute MACHINE_NAME --isolate-network
+
+==============================
 1. add standard packages
 ==============================
 sudo apt update
 sudo apt modernize-sources
-sudo apt install -y nano vim-tiny less software-properties-common ca-certificates curl gnupg wget xz-utils git
+sudo apt install -y nano vim-tiny less software-properties-common ca-certificates curl gnupg wget xz-utils unzip git build-essential passt bubblewrap
 sudo apt update
 
 ==============================
 2. install mise & configure
 ==============================
 curl https://mise.run | sh
-echo 'eval "$(~/.local/bin/mise activate bash)"' >> ~/.bashrc
 
 ==============================
 3. install global mise dependencies
 ==============================
-mise use -g bat delta difftastic eza helix jj jq ripgrep
+~/.local/bin/mise use -g bat delta difftastic eza helix jj jq ripgrep zoxide fd pi node
 
 ==============================
 4. edit ~/.bashrc
 ==============================
+# ========================= personal config =========================
 # mise
 eval "$(~/.local/bin/mise activate bash)"
 
 # go via mise
 export PATH="$HOME/go/bin:$PATH"
+
+# helix as default editor
+export EDITOR=hx
+export VISUAL=hx
+
+# zoxide cd replacement
+eval "$(zoxide init bash)"
 
 # eza ls replacement
 alias ll="eza -al --group-directories-first --icons --git --color=auto --long --header --classify"
@@ -32,6 +46,10 @@ alias ll="eza -al --group-directories-first --icons --git --color=auto --long --
 # bat cat replacement
 alias cat='bat'
 
-
-
-
+==============================
+5. install drop
+==============================
+ARCH=$(uname -m | sed 's/x86_64/amd64/; s/aarch64/arm64/')
+curl -o /tmp/drop -L "https://github.com/wrr/drop/releases/latest/download/drop-linux-$ARCH"
+install /tmp/drop ~/.local/bin/
+rm /tmp/drop

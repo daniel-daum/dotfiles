@@ -1,18 +1,17 @@
-tap "bnimit/tap", trusted: true
 # Plugin manager for zsh, inspired by antigen and antibody
 brew "antidote"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Diff that understands syntax
+brew "difftastic"
 # Modern, maintained replacement for ls
 brew "eza"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
 # Mac App Store command-line interface
 brew "mas"
 # Polyglot runtime manager (asdf rust clone)
 brew "mise"
-# Open-source, cross-platform JavaScript runtime environment
-brew "node"
-# Library to create, extract, and modify Windows Imaging files
-brew "wimlib"
 # Enable Windows-like alt-tab
 cask "alt-tab"
 # Local-first and end-to-end encrypted notes app
@@ -27,6 +26,8 @@ cask "bruno"
 cask "calibre"
 # Anthropic's official Claude AI desktop app
 cask "claude"
+# Multi-platform client-side cloud file encryption tool
+cask "cryptomator"
 # Voice and text chat software
 cask "discord"
 # Downloads videos from different websites
@@ -34,6 +35,8 @@ cask "downie"
 cask "font-ioskeley-mono"
 # 2D and 3D game engine
 cask "godot"
+# Tools to protect your emails and files
+cask "gpg-suite"
 # Homebrew's official GUI
 cask "homebrew-app"
 # Host-based application firewall
@@ -50,10 +53,16 @@ cask "macusb"
 cask "mole-app"
 # VPN client
 cask "mullvad-vpn"
+# Markdown-based note-taking app
+cask "octarine"
+# Android file transfer
+cask "openmtp"
 # Replacement for Docker Desktop
 cask "orbstack"
 # Converts and edits video, audio or image files
 cask "permute"
+# Client for Proton Drive
+cask "proton-drive"
 # Client for Proton Mail and Proton Calendar
 cask "proton-mail"
 # Desktop client for Proton Pass
@@ -62,6 +71,8 @@ cask "proton-pass"
 cask "raycast"
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
+# Client for Old School RuneScape
+cask "runelite"
 # Store SSH keys in the Secure Enclave
 cask "secretive"
 # Video game digital distribution service
@@ -72,6 +83,8 @@ cask "tailscale-app"
 cask "typora"
 # Rust-based terminal
 cask "warp"
+# Full-featured companion app to the YubiKey
+cask "yubico-authenticator"
 # Multiplayer code editor
 cask "zed"
 mas "Brother iPrint&Scan", id: 1193539993

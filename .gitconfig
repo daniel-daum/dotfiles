@@ -1,7 +1,7 @@
 [user]
 	name = daniel daum
 	email = daniel@danieldaum.net
-	signingkey = /Users/daniel/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/PublicKeys/d3b848b40c1cb5e70d1d6e3e2c9aa4ea.pub
+	signingkey = key::ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBKvRA33MsfQeiOntCSFFsgkTxF988KkwGKC1u7S6o8o0Mfji4gDfJE3waDSyo9UWKsiFnB4bNXFM31L+HHxNCxY=
 [commit]
 	gpgsign = true
 [tag]
@@ -42,9 +42,6 @@
 [delta]
     navigate = true
     dark = true
-
-[merge]
-    conflictStyle = zdiff3
 
 [diff]
     tool = difftastic

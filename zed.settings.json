@@ -10,6 +10,11 @@
     // ======================
     // LLM AGENT
     // ======================
+    "edit_predictions": {
+        "mode": "eager",
+        "allow_data_collection": "no"
+    },
+    "cli_default_open_behavior": "new_window",
     "diff_view_style": "split",
     "language_models": {
         "openai_compatible": {
@@ -28,8 +33,8 @@
                         }
                     },
                     {
-                        "name": "swift-qwen3.8-27b-splash",
-                        "display_name": "Qwen3.8 27B",
+                        "name": "swift-1.5-qwen3.8-27b-splash",
+                        "display_name": "Swift 1.5 Qwen3.8 27B",
                         "max_tokens": 262144,
                         "capabilities": {
                             "tools": true,
@@ -43,16 +48,22 @@
         }
     },
     "agent": {
+        "threads_sidebar": {
+            "position": "right"
+        },
+        "thinking_display": "preview",
+        "single_file_review": true,
+        "terminal_init_command": "",
+        "show_turn_stats": true,
         "default_model": {
             "provider": "lmstudio-local",
-            "model": "swift-qwen3.8-27b-splash",
+            "model": "qwen3.6-35b-a3b-splash",
             "enable_thinking": false
         },
         "default_profile": "ask",
         "notify_when_agent_waiting": "all_screens",
         "play_sound_when_agent_done": "always",
-        "dock": "right",
-        "sidebar_side": "right"
+        "dock": "right"
     },
     // ======================
     // PERSONAL ZED SETTINGS
@@ -70,6 +81,14 @@
     "format_on_save": "on",
     "soft_wrap": "editor_width",
     "colorize_brackets": true,
+
+    "git_hosting_providers": [
+        {
+            "provider": "gitea",
+            "name": "My Gitea",
+            "base_url": "https://git.danieldaum.net"
+        }
+    ],
     // ======================
     // SSH
     // ======================
@@ -80,13 +99,10 @@
             "args": ["-A"],
             "projects": [
                 {
-                    "paths": ["/home/daniel/Starforge/dotfiles"]
+                    "paths": ["/home/daniel/starforge/dotfiles"]
                 },
                 {
                     "paths": ["/home/daniel/starforge/holonet"]
-                },
-                {
-                    "paths": ["/home/daniel/starforge/saturn"]
                 }
             ],
             "nickname": "Mustafar"
@@ -115,7 +131,7 @@
     // THEME & VISUAL CONFIG
     // ======================
     "theme": {
-        "mode": "dark",
+        "mode": "system",
         "light": "One Light",
         "dark": "Warp One Dark"
     },
@@ -128,8 +144,8 @@
     "buffer_font_size": 15,
 
     "icon_theme": {
-        "mode": "dark",
-        "light": "Zed (Default)",
+        "mode": "system",
+        "light": "Material Icon Theme",
         "dark": "Material Icon Theme"
     },
 
@@ -162,5 +178,12 @@
         "diagnostics": false,
         "metrics": false,
         "anthropic_retention": false
+    },
+    // ======================
+    // DEVELOPMENTAL - FEATURE FLAGS
+    // ======================
+    "feature_flags": {
+        "tabular-data-preview": "on",
+        "notebooks": "on"
     }
 }
