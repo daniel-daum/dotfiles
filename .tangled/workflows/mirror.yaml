@@ -20,9 +20,9 @@ steps:
     - name: "Mirror to GitHub"
       command: |
           set -euo pipefail
-          git push --force "https://x-access-token:${GH_MIRROR_TOKEN}@github.com/daniel-daum/saturn.git" refs/remotes/origin/main:refs/heads/main
+          git push --force "https://x-access-token:${GH_MIRROR_TOKEN}@github.com/daniel-daum/dotfiles.git" refs/remotes/origin/main:refs/heads/main
 
     - name: "Mirror to Gitea"
       command: |
           set -euo pipefail
-          git push --force "https://daniel-daum:${GITEA_MIRROR_TOKEN}@git.danieldaum.net/daniel-daum/saturn.git" refs/remotes/origin/main:refs/heads/main
+          git push --force "https://daniel-daum:${GITEA_MIRROR_TOKEN}@git.danieldaum.net/daniel-daum/dotfiles.git" refs/remotes/origin/main:refs/heads/main
