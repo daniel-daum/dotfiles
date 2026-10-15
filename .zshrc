@@ -2,6 +2,9 @@
 export DO_NOT_TRACK=1
 export HOMEBREW_NO_ANALYTICS=1
 
+# zed notebooks
+export LOCAL_NOTEBOOK_DEV=1
+
 # ssh auth
 export SSH_AUTH_SOCK=/Users/daniel/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh
 
