@@ -1,0 +1,30 @@
+# Teal: One Dark syntax colors on a teal-tinted base.
+# Matches the Zed theme of the same name. Base colors from Flexoki
+# by Steph Ango, stephango.com/flexoki (MIT); syntax from Atom One Dark.
+name: Teal
+accent: "#5abdac"
+cursor: "#5abdac"
+background:
+    top: "#18201e"
+    bottom: "#151d1c"
+foreground: "#abb2bf"
+details: darker
+terminal_colors:
+    normal:
+        black: "#232c2b"
+        red: "#e06c75"
+        green: "#98c379"
+        yellow: "#e5c07b"
+        blue: "#61afef"
+        magenta: "#c678dd"
+        cyan: "#56b6c2"
+        white: "#abb2bf"
+    bright:
+        black: "#7f8987"
+        red: "#f5848c"
+        green: "#afd992"
+        yellow: "#fbd795"
+        blue: "#7cc5ff"
+        magenta: "#db90f1"
+        cyan: "#73ccd7"
+        white: "#dfe6e5"

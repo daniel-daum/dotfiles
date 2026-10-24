@@ -8,16 +8,20 @@ brew "bat"
 brew "difftastic"
 # Modern, maintained replacement for ls
 brew "eza"
+# Command-line fuzzy finder written in Go
+brew "fzf"
 # Syntax-highlighting pager for git and diff output
 brew "git-delta"
+# Post-modern modal text editor
+brew "helix"
 # Mac App Store command-line interface
 brew "mas"
 # Polyglot runtime manager (asdf rust clone)
 brew "mise"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
-# Command-line client for Tangled, the git forge built on atproto
-brew "alyraffauf/tap/tg", trusted: true
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
 # Enable Windows-like alt-tab
 cask "alt-tab"
 # 3D creation suite
@@ -28,13 +32,17 @@ cask "bloom"
 cask "bruno"
 # E-books management software
 cask "calibre"
+# Anthropic's official Claude AI desktop app
+cask "claude"
 # Multi-platform client-side cloud file encryption tool
 cask "cryptomator"
 # Voice and text chat software
 cask "discord"
 # Downloads videos from different websites
 cask "downie"
+cask "font-geist-pixel"
 cask "font-ioskeley-mono"
+cask "font-ioskeley-mono-term-nerd-font"
 # 2D and 3D game engine
 cask "godot"
 # Tools to protect your emails and files
@@ -83,6 +91,8 @@ cask "rectangle"
 cask "runelite"
 # Store SSH keys in the Secure Enclave
 cask "secretive"
+# Team communication and collaboration software
+cask "slack"
 # Mesh VPN based on WireGuard
 cask "tailscale-app"
 # Configurable document editor that supports Markdown
@@ -93,12 +103,11 @@ cask "warp"
 cask "yubico-authenticator"
 # Multiplayer code editor
 cask "zed"
-mas "Aeronaut", id: 6670275450
 mas "Brother iPrint&Scan", id: 1193539993
+mas "clustta", id: 6748349288
 mas "Developer", id: 640199958
 mas "Dropover", id: 1355679052
 mas "FileMate", id: 6761747283
-mas "Git Streaks", id: 1525795950
 mas "iA Writer", id: 775737590
 mas "Kagi for Safari", id: 1622835804
 mas "Keynote", id: 361285480

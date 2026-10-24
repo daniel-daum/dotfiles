@@ -1,0 +1,30 @@
+# Wine: One Dark syntax colors on a wine-tinted base.
+# Matches the Zed theme of the same name. Base colors from Flexoki
+# by Steph Ango, stephango.com/flexoki (MIT); syntax from Atom One Dark.
+name: Wine
+accent: "#e47da8"
+cursor: "#e47da8"
+background:
+    top: "#241a20"
+    bottom: "#22171d"
+foreground: "#abb2bf"
+details: darker
+terminal_colors:
+    normal:
+        black: "#31262c"
+        red: "#e06c75"
+        green: "#98c379"
+        yellow: "#e5c07b"
+        blue: "#61afef"
+        magenta: "#c678dd"
+        cyan: "#56b6c2"
+        white: "#abb2bf"
+    bright:
+        black: "#8d8388"
+        red: "#f5848c"
+        green: "#afd992"
+        yellow: "#fbd795"
+        blue: "#7cc5ff"
+        magenta: "#db90f1"
+        cyan: "#73ccd7"
+        white: "#e9e2e6"

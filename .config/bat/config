@@ -1,0 +1,10 @@
+# bat: terminal-quiet theme uses the terminal's 16 colors, so code matches the active Warp theme
+--theme="terminal-quiet"
+
+# quiet chrome: line numbers + git change markers + filename header
+--style="numbers,changes,header"
+--italic-text=always
+
+# don't page short files
+--paging=auto
+--pager="less -FR"

@@ -1,0 +1,30 @@
+# Moss: One Dark syntax colors on a moss-tinted base.
+# Matches the Zed theme of the same name. Base colors from Flexoki
+# by Steph Ango, stephango.com/flexoki (MIT); syntax from Atom One Dark.
+name: Moss
+accent: "#a0af54"
+cursor: "#a0af54"
+background:
+    top: "#1c1f14"
+    bottom: "#1a1c12"
+foreground: "#abb2bf"
+details: darker
+terminal_colors:
+    normal:
+        black: "#292c21"
+        red: "#e06c75"
+        green: "#98c379"
+        yellow: "#e5c07b"
+        blue: "#61afef"
+        magenta: "#c678dd"
+        cyan: "#56b6c2"
+        white: "#abb2bf"
+    bright:
+        black: "#85887f"
+        red: "#f5848c"
+        green: "#afd992"
+        yellow: "#fbd795"
+        blue: "#7cc5ff"
+        magenta: "#db90f1"
+        cyan: "#73ccd7"
+        white: "#e4e5df"

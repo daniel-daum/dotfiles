@@ -1,0 +1,38 @@
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "shift shift": "file_finder::Toggle",
+      "cmd-1": "project_panel::ToggleFocus",
+      "cmd-2": "git_panel::ToggleFocus",
+      "cmd-3": "outline_panel::ToggleFocus",
+      "cmd-4": "pane::DeploySearch",
+      "cmd-5": "workspace::NewCenterTerminal",
+      "cmd-r": "agent::Toggle",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "shift shift": "file_finder::Toggle",
+      "cmd-1": "project_panel::ToggleFocus",
+      "cmd-2": "git_panel::ToggleFocus",
+      "cmd-3": "outline_panel::ToggleFocus",
+      "cmd-4": "pane::DeploySearch",
+      "cmd-5": "workspace::NewCenterTerminal",
+      "cmd-r": "agent::ToggleFocus",
+    },
+  },
+  {
+    // The git panel binds its own cmd-1 / cmd-2 to its Changes / History tabs,
+    // which beats the Workspace bindings above. Put them back to panel switching
+    // and move the tabs to cmd-{ / cmd-} (the keys Zed uses to switch editor tabs).
+    "context": "GitPanel",
+    "bindings": {
+      "cmd-1": "project_panel::ToggleFocus",
+      "cmd-2": "git_panel::ToggleFocus",
+      "cmd-{": "git_panel::ActivateChangesTab",
+      "cmd-}": "git_panel::ActivateHistoryTab",
+    },
+  },
+]

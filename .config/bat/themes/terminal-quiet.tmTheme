@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  terminal-quiet: bat theme built only from the terminal's 16 ANSI colors
+  (#RR000000 = palette slot RR, #00000001 = terminal default), so it follows the
+  active Warp theme. Roles mirror the Flexoki-based Zed theme: red variables and
+  properties, purple keywords (ANSI magenta), blue functions, green strings,
+  yellow types, cyan escapes and builtins, gray italic comments. Zed's orange
+  (numbers, constants, flags) uses bright red, its closest ANSI match.
+-->
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>terminal-quiet</string>
+	<key>settings</key>
+	<array>
+		<dict>
+			<key>settings</key>
+			<dict>
+				<key>background</key>
+				<string>#00000001</string>
+				<key>caret</key>
+				<string>#00000001</string>
+				<key>foreground</key>
+				<string>#00000001</string>
+				<key>guide</key>
+				<string>#08000000</string>
+				<key>gutter</key>
+				<string>#00000001</string>
+				<key>gutterForeground</key>
+				<string>#08000000</string>
+				<key>lineHighlight</key>
+				<string>#00000001</string>
+				<key>selection</key>
+				<string>#08000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Comment</string>
+			<key>scope</key>
+			<string>comment, punctuation.definition.comment</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
+				<key>foreground</key>
+				<string>#08000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Variable</string>
+			<key>scope</key>
+			<string>variable, variable.other, variable.parameter, punctuation.definition.variable</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#01000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Property</string>
+			<key>scope</key>
+			<string>variable.other.member, variable.other.property, meta.object-literal.key, support.type.property-name, entity.other.attribute-name, meta.mapping.key string</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#01000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Tag</string>
+			<key>scope</key>
+			<string>entity.name.tag</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#01000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Self / this</string>
+			<key>scope</key>
+			<string>variable.language</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#03000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Operator</string>
+			<key>scope</key>
+			<string>keyword.operator, punctuation</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#07000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>String</string>
+			<key>scope</key>
+			<string>string, string punctuation.definition.string</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#02000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Format placeholder</string>
+			<key>scope</key>
+			<string>constant.other.placeholder</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#02000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Escape</string>
+			<key>scope</key>
+			<string>constant.character.escape, string.regexp</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#06000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Number</string>
+			<key>scope</key>
+			<string>constant.numeric</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#09000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Constant</string>
+			<key>scope</key>
+			<string>constant.language, constant.other, support.constant, variable.other.constant</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#09000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Flag</string>
+			<key>scope</key>
+			<string>variable.parameter.option</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#09000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Attribute</string>
+			<key>scope</key>
+			<string>entity.name.function.decorator, meta.annotation, meta.attribute</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#09000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Keyword</string>
+			<key>scope</key>
+			<string>keyword, storage.type, storage.modifier, keyword.declaration, keyword.control, storage.type.keyword</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#05000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Type</string>
+			<key>scope</key>
+			<string>entity.name.type, entity.name.class, support.type, support.class, entity.other.inherited-class, storage.type.go</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#03000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Function</string>
+			<key>scope</key>
+			<string>entity.name.function, support.function, variable.function, meta.function-call entity.name, meta.function-call variable</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#04000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Builtin function</string>
+			<key>scope</key>
+			<string>support.function.builtin</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#06000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Shell builtin</string>
+			<key>scope</key>
+			<string>source.shell support.function</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#04000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Markup heading</string>
+			<key>scope</key>
+			<string>markup.heading, entity.name.section</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>bold</string>
+				<key>foreground</key>
+				<string>#01000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Markup bold</string>
+			<key>scope</key>
+			<string>markup.bold</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>bold</string>
+				<key>foreground</key>
+				<string>#09000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Markup italic</string>
+			<key>scope</key>
+			<string>markup.italic</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
+				<key>foreground</key>
+				<string>#05000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Markup code</string>
+			<key>scope</key>
+			<string>markup.raw, markup.inline.raw</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#02000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Markup link</string>
+			<key>scope</key>
+			<string>markup.underline.link, string.other.link</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>underline</string>
+				<key>foreground</key>
+				<string>#04000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Markup list</string>
+			<key>scope</key>
+			<string>punctuation.definition.list_item, markup.list.numbered.bullet</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#01000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Markup quote</string>
+			<key>scope</key>
+			<string>markup.quote</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>italic</string>
+				<key>foreground</key>
+				<string>#08000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Diff added</string>
+			<key>scope</key>
+			<string>markup.inserted</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#02000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Diff removed</string>
+			<key>scope</key>
+			<string>markup.deleted</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#01000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Diff changed</string>
+			<key>scope</key>
+			<string>markup.changed</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#03000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Diff header</string>
+			<key>scope</key>
+			<string>meta.diff.header, meta.diff.index</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>bold</string>
+				<key>foreground</key>
+				<string>#04000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Diff range</string>
+			<key>scope</key>
+			<string>meta.diff.range</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#06000000</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Invalid</string>
+			<key>scope</key>
+			<string>invalid</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>underline</string>
+				<key>foreground</key>
+				<string>#01000000</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

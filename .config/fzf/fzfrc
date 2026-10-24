@@ -1,0 +1,29 @@
+# fzf defaults (loaded via FZF_DEFAULT_OPTS_FILE).
+# Colors use only the terminal's 16 ANSI colors (base scheme "16"), so fzf
+# follows whichever Warp theme is active, same as bat and eza. Roles match the
+# Zed theme: purple prompt/pointer (keyword color), yellow matches (like search
+# highlights), selected row on the black/ui color, gray chrome.
+
+--color=16
+--color=fg:-1,bg:-1,query:-1,gutter:-1
+--color=hl:yellow,hl+:yellow:bold
+--color=fg+:bright-white,bg+:black
+--color=prompt:magenta,pointer:magenta,marker:green,spinner:cyan
+--color=info:bright-black,header:blue,label:bright-black,ghost:bright-black
+--color=border:bright-black,separator:black,scrollbar:bright-black
+--color=preview-border:bright-black,preview-scrollbar:bright-black
+
+# Layout: input on top, compact info, full-width row highlight, wrap at list ends
+--layout=reverse
+--info=inline-right
+--border=rounded
+--prompt='❯ '
+--pointer='▌'
+--marker='┃'
+--gutter=' '
+--highlight-line
+--cycle
+--scroll-off=3
+
+# ctrl-/ shows or hides the preview; ctrl-u / ctrl-d scroll it
+--bind='ctrl-/:toggle-preview,ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down'

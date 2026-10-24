@@ -1,0 +1,30 @@
+# Flexoki: One Dark syntax colors on a flexoki-tinted base.
+# Matches the Zed theme of the same name. Base colors from Flexoki
+# by Steph Ango, stephango.com/flexoki (MIT); syntax from Atom One Dark.
+name: Flexoki
+accent: "#e8705f"
+cursor: "#e8705f"
+background:
+    top: "#201e1a"
+    bottom: "#1d1b18"
+foreground: "#abb2bf"
+details: darker
+terminal_colors:
+    normal:
+        black: "#2c2a27"
+        red: "#e06c75"
+        green: "#98c379"
+        yellow: "#e5c07b"
+        blue: "#61afef"
+        magenta: "#c678dd"
+        cyan: "#56b6c2"
+        white: "#abb2bf"
+    bright:
+        black: "#898683"
+        red: "#f5848c"
+        green: "#afd992"
+        yellow: "#fbd795"
+        blue: "#7cc5ff"
+        magenta: "#db90f1"
+        cyan: "#73ccd7"
+        white: "#e7e4e0"

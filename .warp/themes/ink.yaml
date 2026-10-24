@@ -1,0 +1,30 @@
+# Ink: One Dark syntax colors on a ink-tinted base.
+# Matches the Zed theme of the same name. Base colors from Flexoki
+# by Steph Ango, stephango.com/flexoki (MIT); syntax from Atom One Dark.
+name: Ink
+accent: "#66a0c8"
+cursor: "#66a0c8"
+background:
+    top: "#181e24"
+    bottom: "#161c22"
+foreground: "#abb2bf"
+details: darker
+terminal_colors:
+    normal:
+        black: "#252b31"
+        red: "#e06c75"
+        green: "#98c379"
+        yellow: "#e5c07b"
+        blue: "#61afef"
+        magenta: "#c678dd"
+        cyan: "#56b6c2"
+        white: "#abb2bf"
+    bright:
+        black: "#81878e"
+        red: "#f5848c"
+        green: "#afd992"
+        yellow: "#fbd795"
+        blue: "#7cc5ff"
+        magenta: "#db90f1"
+        cyan: "#73ccd7"
+        white: "#e1e5ea"

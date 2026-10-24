@@ -42,6 +42,7 @@
 [delta]
     navigate = true
     dark = true
+    syntax-theme = terminal-quiet
 
 [diff]
     tool = difftastic
