@@ -1,0 +1,7 @@
+id = "phosphor-colored-icons"
+name = "Phosphor Colored Icons"
+version = "0.1.1"
+schema_version = 1
+authors = ["Daniel Daum"]
+description = "Phosphor icons in color for Zed, with dark and light sets. Fork of Phosphor Icons Theme by Theo Luciano."
+repository = "https://github.com/REPLACE-ME/phosphor-colored-icons"

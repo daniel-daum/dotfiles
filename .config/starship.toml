@@ -1,0 +1,47 @@
+# two lines, laid out like warp's prompt: venv (when active), full path, git:(branch), time taken.
+# colors are ansi names, so the prompt follows the terminal's theme.
+"$schema" = 'https://starship.rs/config-schema.json'
+add_newline = true
+format = '''
+$python$directory$git_branch$git_state$git_status$cmd_duration
+$character'''
+
+[python]
+# only the venv name, and only while one is active (no python version lookup)
+detect_extensions = []
+detect_files = []
+detect_folders = []
+style = 'bright-black'
+format = '([$virtualenv]($style) )'
+
+[directory]
+style = 'blue'
+truncation_length = 0
+truncate_to_repo = false
+format = '[$path]($style)[$read_only]($read_only_style) '
+
+[git_branch]
+format = '[git:\(](bright-black)[$branch](purple)[\)](bright-black)'
+
+[git_state]
+style = 'bright-black'
+format = ' \([$state( $progress_current/$progress_total)]($style)\)'
+
+[git_status]
+# * when anything changed: each state is a zero-width space, so the group only shows when one is set
+format = '( [*$conflicted$untracked$modified$staged$renamed$deleted](yellow))( [$ahead_behind$stashed](cyan)) '
+conflicted = "​"
+untracked = "​"
+modified = "​"
+staged = "​"
+renamed = "​"
+deleted = "​"
+stashed = '≡'
+
+[cmd_duration]
+style = 'bright-black'
+format = '[$duration]($style) '
+
+[character]
+success_symbol = '[❯](purple)'
+error_symbol = '[❯](red)'

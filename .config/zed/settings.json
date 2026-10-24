@@ -16,12 +16,13 @@
       "args": [],
       "projects": [
         {
-          "paths": [
-            "/home/daniel/starforge/saturn"
-          ]
-        }
-      ]
-    }
+          "paths": ["/home/daniel/starforge/archive/zed"],
+        },
+        {
+          "paths": ["/home/daniel/starforge/saturn"],
+        },
+      ],
+    },
   ],
   "restore_on_startup": "launchpad",
   "redact_private_values": true,
@@ -77,8 +78,8 @@
   "buffer_font_size": 15,
   "icon_theme": {
     "mode": "system",
-    "light": "Material Icon Theme",
-    "dark": "Material Icon Theme",
+    "light": "Phosphor Colored Moss",
+    "dark": "Phosphor Colored Moss",
   },
   "indent_guides": {
     "background_coloring": "indent_aware",

@@ -15,15 +15,12 @@ path+=(
   "${GOPATH:-$HOME/go}/bin"          # tools from `go install`
 )
 
-# ---- plugins ----------------------------------------------------------------
-source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
-setopt PROMPT_SUBST
-antidote load
-
 # ---- aliases ----------------------------------------------------------------
 alias ll="eza -al --group-directories-first --icons --git --header --classify"
 alias cat="bat"
 
 # ---- tools (keep last) ------------------------------------------------------
+# prompt for terminals other than warp
+[[ $TERM_PROGRAM != WarpTerminal ]] && eval "$(starship init zsh)"
 eval "$(mise activate zsh)" # mise
 source "$HOME/.config/zsh/fzf-zoxide.zsh"   # fzf + zoxide
