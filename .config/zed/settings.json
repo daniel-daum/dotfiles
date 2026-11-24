@@ -10,28 +10,9 @@
   // ======================
   // PERSONAL ZED SETTINGS
   // ======================
-  "ssh_connections": [
-    {
-      "host": "orb",
-      "args": [],
-      "projects": [
-        {
-          "paths": ["/home/daniel/starforge/archive/zed"],
-        },
-        {
-          "paths": ["/home/daniel/starforge/saturn"],
-        },
-      ],
-    },
-  ],
   "restore_on_startup": "launchpad",
-  "redact_private_values": true,
+  "redact_private_values": false,
   "autosave": "on_focus_change",
-  // "autosave": {
-  //   "after_delay": {
-  //     "milliseconds": 1000,
-  //   },
-  // },
   "ensure_final_newline_on_save": true,
   "remove_trailing_whitespace_on_save": true,
   "format_on_save": "on",
@@ -41,7 +22,7 @@
     {
       "provider": "gitea",
       "name": "My Gitea",
-      "base_url": "https://git.danieldaum.net",
+      "base_url": "https://code.aardvark-halibut.ts.net",
     },
   ],
   "title_bar": { "show_sign_in": false },
@@ -78,8 +59,8 @@
   "buffer_font_size": 15,
   "icon_theme": {
     "mode": "system",
-    "light": "Phosphor Colored Moss",
-    "dark": "Phosphor Colored Moss",
+    "light": "Material Icon Theme",
+    "dark": "Material Icon Theme",
   },
   "indent_guides": {
     "background_coloring": "indent_aware",
@@ -102,17 +83,47 @@
   // ======================
   // DEVELOPMENTAL - FEATURE FLAGS
   // ======================
-  "feature_flags": {
-    "tabular-data-preview": "on",
-    "notebooks": "on",
-  },
+  // "feature_flags": {
+  //   "tabular-data-preview": "on",
+  //   "notebooks": "on",
+  // },
 
   // ======================
   // PERSONAL - SSH
   // ======================
-  //
-  //
-
+  "ssh_connections": [
+    {
+      "host": "orb",
+      "args": [],
+      "projects": [
+        {
+          "paths": ["/home/daniel/projects/saturn"],
+        },
+        {
+          "paths": ["/home/daniel/projects/showcase"],
+        },
+      ],
+      "nickname": "ubuntu",
+    },
+    {
+      "host": "ziost",
+      "args": [],
+      "projects": [
+        {
+          "paths": ["/home/maliciouspickle/pangolin"],
+        },
+      ],
+    },
+    {
+      "host": "narshaddaa",
+      "args": [],
+      "projects": [
+        {
+          "paths": ["/home/daniel/homelab"],
+        },
+      ],
+    },
+  ],
   // ======================
   // LLM AGENT
   // ======================
