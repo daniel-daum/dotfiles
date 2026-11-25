@@ -1,0 +1,4 @@
+#!/bin/sh
+key=$(ssh-add -L | grep -m1 '^ecdsa-sha2-nistp256 ')
+[ -n "$key" ] || { echo "no Secretive key in agent" >&2; exit 1; }
+echo "key::$key"

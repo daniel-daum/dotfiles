@@ -26,6 +26,8 @@ cask "godot"
 cask "homebrew-app"
 # Free and open-source media player
 cask "iina"
+# Keyboard customiser
+cask "karabiner-elements"
 # Discover, download, and run local LLMs
 cask "lm-studio"
 # AI agent for working with open models

@@ -1,0 +1,10 @@
+make ~/.local/bin/git-signing-key
+
+chmod +x ~/.local/bin/git-signing-key
+
+ssh-add -L
+
+git config --global gpg.format ssh
+git config --global commit.gpgsign true
+
+git config --global gpg.ssh.defaultKeyCommand ~/.local/bin/git-signing-key
